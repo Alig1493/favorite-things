@@ -1,20 +1,20 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <!--<Login/>-->
+    <Login/>
     <Form/>
   </div>
 </template>
 
 <script>
-  // import Login from './components/Login.vue'
+  import Login from './components/Login.vue'
   import Form from './components/Form.vue'
 
   export default {
     name: 'app',
     components: {
-      // Login,
-      Form,
+      Login,
+      Form
     }
   }
 </script>

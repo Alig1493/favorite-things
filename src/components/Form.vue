@@ -3,21 +3,6 @@
     <div>
       <b-form @submit="onSubmit" @reset="onReset" v-if="show">
         <b-form-group
-          id="input-group-1"
-          label="Email address:"
-          label-for="input-1"
-          description="We'll never share your email with anyone else."
-        >
-          <b-form-input
-            id="input-1"
-            v-model="form.email"
-            type="email"
-            required
-            placeholder="Enter email"
-          ></b-form-input>
-        </b-form-group>
-
-        <b-form-group
           id="input-group-2"
           label="Title of your favorite thing:"
           label-for="input-2">
@@ -86,9 +71,11 @@
         <b-button type="submit" variant="primary">Submit</b-button>
         <b-button type="reset" variant="danger">Reset</b-button>
       </b-form>
+
       <b-card class="mt-3 mb-3" header="Form Data Result">
         <pre class="m-0">{{ form }}</pre>
       </b-card>
+
     </div>
   </b-container>
 </template>
@@ -98,7 +85,6 @@
     data() {
       return {
         form: {
-          email: '',
           title: '',
           description: '',
           number: null,
@@ -118,7 +104,6 @@
       onReset(evt) {
         evt.preventDefault()
         // Reset our form values
-        this.form.email = ''
         this.form.title = ''
         this.form.description = ''
         this.form.number = null
