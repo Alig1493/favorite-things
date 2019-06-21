@@ -32,7 +32,7 @@
           label-for="input-4">
           <b-form-input
             id="input-4"
-            v-model="form.number"
+            v-model="form.ranking"
             type="number"
             required
             placeholder="Insert ranking in integers"
@@ -53,7 +53,7 @@
 
           <datalist id="input-5">
             <option v-for="category in categories"
-                    v-bind:key="category">{{ category }}</option>
+                    :key="category">{{ category }}</option>
           </datalist>
         </b-form-group>
 
@@ -87,19 +87,74 @@
         form: {
           title: '',
           description: '',
-          number: null,
+          ranking: null,
           category: '',
           metadata: ''
         },
-        categories: ['Carrots', 'Beans', 'Tomatoes', 'Corn'],
+        categories: [],
         show: true
       }
     },
+    created() {
+      // fetch the data when the view is created and the data is
+      // already being observed
+      this.fetchData()
+    },
+    watch: {
+      // call again the method if the route changes
+      '$route': 'fetchData'
+    },
     name: "Form",
     methods: {
+      fetchData() {
+        // replace `getPost` with your data fetching util / API wrapper
+        fetch('http://0.0.0.0:8000/api/v1/favorite/categories/', {
+          method: 'GET', // *GET, POST, PUT, DELETE, etc.
+          mode: 'cors', // no-cors, cors, *same-origin
+          credentials: 'same-origin',
+          headers: {
+            'Content-Type': 'application/json',
+          }
+        })
+          .then(
+            res => res.json()
+          )
+          .then(
+            response => {
+              let jsonResponse = JSON.stringify(response)
+              console.log('Success:', jsonResponse)
+              for (let i = 0; i < response.length; i++) {
+                console.log(response[i].title)
+                this.categories.push(response[i].title)
+              }
+            }
+          )
+          .catch(error => console.error('Error:', error))
+      },
       onSubmit(evt) {
         evt.preventDefault()
-        alert(JSON.stringify(this.form))
+        fetch('http://0.0.0.0:8000/api/v1/favorite/', {
+          method: 'POST', // *GET, POST, PUT, DELETE, etc.
+          mode: 'cors', // no-cors, cors, *same-origin
+          credentials: 'same-origin',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': ''.concat('JWT ', localStorage.getItem('jwt'))
+          },
+          body: JSON.stringify(this.form),
+        })
+          .then(
+            res => res.json()
+          )
+          .then(
+            response => {
+              console.log(this.headers)
+              alert(this.headers)
+              let jsonResponse = JSON.stringify(response)
+              console.log('Success:', jsonResponse)
+            }
+          )
+          .catch(error => console.error('Error:', error))
       },
       onReset(evt) {
         evt.preventDefault()
