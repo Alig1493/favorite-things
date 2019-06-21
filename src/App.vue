@@ -1,21 +1,27 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <Login/>
-    <Form/>
+    <!-- use router-link component for navigation. -->
+    <!-- specify the link by passing the `to` prop. -->
+    <!-- `<router-link>` will be rendered as an `<a>` tag by default -->
+    <!-- route outlet -->
+    <!-- component matched by the route will render here -->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-  import Login from './components/Login.vue'
-  import Form from './components/Form.vue'
 
   export default {
+    data() {
+      return {
+
+      }
+    },
+    methods: {
+
+    },
     name: 'app',
-    components: {
-      Login,
-      Form
-    }
   }
 </script>
 

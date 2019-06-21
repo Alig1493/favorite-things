@@ -57,14 +57,13 @@
       }
     },
     name: 'Login',
-    props: {
-      msg: String
-    },
     methods: {
       onSubmit(evt) {
+        // The Event interface's preventDefault() method tells the user agent
+        // that if the event does not get explicitly handled, its default action
+        // should not be taken as it normally would be.
         evt.preventDefault()
 
-        this.authToken = ''
         fetch('http://0.0.0.0:8000/api/v1/auth/login/', {
           method: 'POST', // *GET, POST, PUT, DELETE, etc.
           mode: 'cors', // no-cors, cors, *same-origin
@@ -74,12 +73,20 @@
           },
           body: JSON.stringify(this.form),
         })
-          .then(function (response) {
-            return response.json()
-          })
-          .then(function (myJson) {
-            alert(JSON.stringify(myJson))
-          })
+          .then(
+            res => res.json()
+          )
+          .then(
+            response => {
+              let jsonResponse = JSON.stringify(response)
+              console.log('Success:', jsonResponse)
+              localStorage.setItem('jwt', response.token)
+              console.log('jwt:', localStorage.getItem('jwt'))
+
+              this.$router.push('/')
+            }
+          )
+          .catch(error => console.error('Error:', error));
       }
     }
   }

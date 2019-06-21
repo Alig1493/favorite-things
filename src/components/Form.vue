@@ -36,7 +36,7 @@
             type="number"
             required
             placeholder="Insert ranking in integers"
-            no-wheel="true"
+            no-wheel=true
           ></b-form-input>
         </b-form-group>
 
