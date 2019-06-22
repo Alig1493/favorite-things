@@ -24,12 +24,18 @@ const routes = [
   {
     path: '/form',
     name: 'form',
-    component: Form
+    component: Form,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/',
     name: 'list',
-    component: List
+    component: List,
+    meta: {
+      requiresAuth: true
+    }
   }
 ]
 
