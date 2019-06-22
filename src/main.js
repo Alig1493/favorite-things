@@ -4,6 +4,7 @@ import BootstrapVue from 'bootstrap-vue'
 
 import Login from './components/Login.vue'
 import Form from './components/Form.vue'
+import List from './components/List.vue'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -21,12 +22,14 @@ const routes = [
     component: Login
   },
   {
-    path: '/',
+    path: '/form',
     name: 'form',
-    component: Form,
-    meta: {
-      requiresAuth: true
-    }
+    component: Form
+  },
+  {
+    path: '/',
+    name: 'list',
+    component: List
   }
 ]
 

@@ -151,7 +151,7 @@
               console.log(response.status)
               let jsonResponse = JSON.stringify(response)
               console.log('Success:', jsonResponse)
-              alert(jsonResponse)
+              this.$router.push('/')
             }
           )
           .catch(error => console.error('Error:', error))
