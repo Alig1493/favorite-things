@@ -68,11 +68,11 @@
           ></b-form-textarea>
         </b-form-group>
 
-        <b-button type="submit" variant="primary">Submit</b-button>
+        <b-button class="mr-3" type="submit" variant="primary">Submit</b-button>
         <b-button type="reset" variant="danger">Reset</b-button>
       </b-form>
 
-      <b-card class="mt-3 mb-3" header="Form Data Result">
+      <b-card class="mt-3 mb-3" header="Form Data Result Going To Backend">
         <pre class="m-0">{{ form }}</pre>
       </b-card>
 
@@ -108,7 +108,7 @@
     methods: {
       fetchData() {
         // replace `getPost` with your data fetching util / API wrapper
-        fetch('http://0.0.0.0:8000/api/v1/favorite/categories/', {
+        fetch('http://0.0.0.0:8000/api/v1/favorites/categories/', {
           method: 'GET', // *GET, POST, PUT, DELETE, etc.
           mode: 'cors', // no-cors, cors, *same-origin
           credentials: 'same-origin',
@@ -133,7 +133,7 @@
       },
       onSubmit(evt) {
         evt.preventDefault()
-        fetch('http://0.0.0.0:8000/api/v1/favorite/', {
+        fetch('http://0.0.0.0:8000/api/v1/favorites/', {
           method: 'POST', // *GET, POST, PUT, DELETE, etc.
           mode: 'cors', // no-cors, cors, *same-origin
           credentials: 'same-origin',
@@ -148,10 +148,10 @@
           )
           .then(
             response => {
-              console.log(this.headers)
-              alert(this.headers)
+              console.log(response.status)
               let jsonResponse = JSON.stringify(response)
               console.log('Success:', jsonResponse)
+              alert(jsonResponse)
             }
           )
           .catch(error => console.error('Error:', error))
