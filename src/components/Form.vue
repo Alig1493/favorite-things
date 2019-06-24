@@ -22,8 +22,15 @@
           <b-form-textarea
             id="input-3"
             v-model="form.description"
+            :state="minimumLength"
+            aria-describedby="input-live-feedback"
             placeholder="Enter Description"
           ></b-form-textarea>
+
+          <b-form-invalid-feedback id="input-live-feedback">
+            Enter at least 10 letters
+          </b-form-invalid-feedback>
+
         </b-form-group>
 
         <b-form-group
@@ -93,6 +100,13 @@
         },
         categories: [],
         show: true
+      }
+    },
+    computed: {
+      minimumLength() {
+        if (this.form.description)
+          return this.form.description < 10
+        return true
       }
     },
     created() {
