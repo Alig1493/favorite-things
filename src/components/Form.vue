@@ -79,6 +79,8 @@
         <b-button type="reset" variant="danger">Reset</b-button>
       </b-form>
 
+      <b-button href="/" class="mt-3" variant="success">See All Your Favorite Things</b-button>
+
       <b-card class="mt-3 mb-3" header="Form Data Result Going To Backend">
         <pre class="m-0">{{ form }}</pre>
       </b-card>
@@ -122,7 +124,7 @@
     methods: {
       fetchData() {
         // replace `getPost` with your data fetching util / API wrapper
-        fetch('http://0.0.0.0:8000/api/v1/favorites/categories/', {
+        fetch('http://13.235.4.179:30001/api/v1/favorites/categories/', {
           method: 'GET', // *GET, POST, PUT, DELETE, etc.
           mode: 'cors', // no-cors, cors, *same-origin
           credentials: 'same-origin',
@@ -147,7 +149,7 @@
       },
       onSubmit(evt) {
         evt.preventDefault()
-        fetch('http://0.0.0.0:8000/api/v1/favorites/', {
+        fetch('http://13.235.4.179:30001/api/v1/favorites/', {
           method: 'POST', // *GET, POST, PUT, DELETE, etc.
           mode: 'cors', // no-cors, cors, *same-origin
           credentials: 'same-origin',

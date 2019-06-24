@@ -35,7 +35,7 @@
     methods: {
       fetchData() {
         // replace `getPost` with your data fetching util / API wrapper
-        fetch('http://0.0.0.0:8000/api/v1/favorites/', {
+        fetch('http://13.235.4.179:30001/api/v1/favorites/', {
           method: 'GET', // *GET, POST, PUT, DELETE, etc.
           mode: 'cors', // no-cors, cors, *same-origin
           credentials: 'same-origin',
