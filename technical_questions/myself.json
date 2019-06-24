@@ -1,0 +1,21 @@
+{
+  "name": "Mohammed Ali Zubair",
+  "profile": {
+    "date_of_birth": "01/04/93",
+    "highest_education": "Bachelor's in Computer Science and Engineering",
+    "current_occupation": "Software Engineer",
+    "residency": "Dhaka, Bangladesh"
+  },
+  "technology": {
+    "fairly_good": ["python", "django", "docker-compose", "celery", "CI/CD implementations"],
+    "interested_to_learn": ["js (Vue framework)", "Go lang"]
+  },
+  "hobbies": {
+    "current": ["cycling", "football (both watching and playing)", "a good rpg video game"],
+    "interested_to_learn": ["martial arts", "rock climbing"]
+  },
+  "aspirations": "To become a better individual, be it an engineer or otherwise than I am today.",
+  "goals": "To always keep learning, be it through mistakes or via conventional means",
+  "inspirations": ["Mother", "Mohammad Ali (Boxer)", "friends", "My first co-workers"],
+  "dream": "To be happily driving a car of my choice in a nice countryside knowing I've lived a good life."
+}
