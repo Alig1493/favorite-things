@@ -126,7 +126,7 @@
       },
       fetchData() {
         // replace `getPost` with your data fetching util / API wrapper
-        fetch('http://13.235.4.179:30001/api/v1/favorites/categories/', {
+        fetch('https://13.235.4.179:30001/api/v1/favorites/categories/', {
           method: 'GET', // *GET, POST, PUT, DELETE, etc.
           mode: 'cors', // no-cors, cors, *same-origin
           credentials: 'same-origin',
