@@ -64,7 +64,7 @@
         // should not be taken as it normally would be.
         evt.preventDefault()
 
-        fetch('http://13.235.4.179:30001/api/v1/auth/login/', {
+        fetch('https://13.235.4.179:30001/api/v1/auth/login/', {
           method: 'POST', // *GET, POST, PUT, DELETE, etc.
           mode: 'cors', // no-cors, cors, *same-origin
           credentials: 'same-origin',

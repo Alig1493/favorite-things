@@ -1,7 +1,7 @@
 <template>
   <b-container>
     <h1>List of Favorite things by Categories (sorted by ranking)</h1>
-    <b-button href="/form" variant="primary">Insert New Favorite Thing</b-button>
+    <b-button href="/form" v-on:click="move" variant="primary">Insert New Favorite Thing</b-button>
     <div v-for="item in list" :key="item">
       <b-card class="m-3">
         <b-card-text class="h3">
@@ -33,9 +33,12 @@
       '$route': 'fetchData'
     },
     methods: {
+      move() {
+        this.$router.push('/form')
+      },
       fetchData() {
         // replace `getPost` with your data fetching util / API wrapper
-        fetch('http://13.235.4.179:30001/api/v1/favorites/', {
+        fetch('https://13.235.4.179:30001/api/v1/favorites/', {
           method: 'GET', // *GET, POST, PUT, DELETE, etc.
           mode: 'cors', // no-cors, cors, *same-origin
           credentials: 'same-origin',
