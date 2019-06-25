@@ -7,15 +7,23 @@ django code.
 ### Deployment
 Using netlify
 Link: https://vibrant-lewin-b97ee2.netlify.com/
+Login credentials:
+* username: admin
+* password: admin12345
 
 P.S: This application isn't well built in the sense that it will 
-redirect to the list page even if the response to submitting the
+redirect to the list page even if the response status after submitting the
 form is anything other than 201/200
 
 ## Project setup
 ```
 npm install
 ```
+Used [this history and push states](https://www.netlify.com/docs/redirects/)
+guide for router settings when my single page vue app on netlify.
+
+Used [bootstrap-vue for templating](https://bootstrap-vue.js.org/docs/)
+
 
 ### Compiles and hot-reloads for development
 ```
