@@ -22,6 +22,8 @@ better if I had more time are:
     (since I used a cookie cutter project to do the backend work
     it might have a lot of packages in the requirements file
     that we did not end up using.)
+    * use [djang-dirty-fields](https://github.com/romgar/django-dirtyfields)
+      to track my model field changes instead of my custom `ModelDiffMixin`
 
 ### Useful feature added on the latest version of the chosen language
 My main strengths and experience in this project was in python.
