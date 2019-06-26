@@ -22,6 +22,8 @@ better if I had more time are:
     * Handle `metadata` using proper dynamic data type fields instead 
     of statically displaying the type of data key and value pairs we can
     send to the backend.
+    * Implement PATCH/PUT and GET(Retrieve) request handling using forms (only implemented 
+    GET(list) and POST)
 
 2. For back end:
     * More tests
