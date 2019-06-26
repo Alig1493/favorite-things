@@ -152,7 +152,7 @@
       },
       onSubmit(evt) {
         evt.preventDefault()
-        fetch('http://0.0.0.0:8000/api/v1/favorites/', {
+        fetch('https://13.235.4.179/api/v1/favorites/', {
           method: 'POST', // *GET, POST, PUT, DELETE, etc.
           mode: 'cors', // no-cors, cors, *same-origin
           credentials: 'same-origin',
