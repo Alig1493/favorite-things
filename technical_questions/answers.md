@@ -14,6 +14,8 @@ better if I had more time are:
     * Code for testing
     * CI/CD Implementations
     * Handling present warnings and errors better.
+    * Handle `metadata` field as a proper json formatted
+    and validated data instead of text area.
 
 2. For back end:
     * More tests
