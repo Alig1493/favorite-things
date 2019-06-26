@@ -106,7 +106,8 @@
     computed: {
       minimumLength() {
         if (this.form.description)
-          return this.form.description < 10
+          if (this.form.description.length < 10)
+            return false
         return true
       }
     },
@@ -151,7 +152,7 @@
       },
       onSubmit(evt) {
         evt.preventDefault()
-        fetch('https://13.235.4.179/api/v1/favorites/', {
+        fetch('http://0.0.0.0:8000/api/v1/favorites/', {
           method: 'POST', // *GET, POST, PUT, DELETE, etc.
           mode: 'cors', // no-cors, cors, *same-origin
           credentials: 'same-origin',
