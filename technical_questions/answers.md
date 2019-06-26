@@ -2,6 +2,11 @@
 This project was done over the span of two weekends, most of which were spent for study purposes of 
 mostly the vue.js library.
 
+(P.S: the metadata portion shows us the key value pairs we can store in our database.
+In order to save the metadata values we have to enter both the key and value
+pairs otherwise the data types with a single missing key or value pair will not be saved. 
+Data types currently being saved in our meta data are: `text`, `date` and `integer` types.)
+
 Some of the things that I'd have liked to do 
 better if I had more time are:
 1. For front end:
@@ -14,8 +19,9 @@ better if I had more time are:
     * Code for testing
     * CI/CD Implementations
     * Handling present warnings and errors better.
-    * Handle `metadata` field as a proper json formatted
-    and validated data instead of text area.
+    * Handle `metadata` using proper dynamic data type fields instead 
+    of statically displaying the type of data key and value pairs we can
+    send to the backend.
 
 2. For back end:
     * More tests

@@ -67,11 +67,47 @@
           id="input-group-6"
           label="Metadata for your favorite thing:"
           label-for="input-6">
-          <b-form-textarea
-            id="input-6"
-            v-model="form.metadata"
-            placeholder="Insert Metadata"
-          ></b-form-textarea>
+          <b-row>
+            <b-col>
+              <b-form-input
+                v-model="form.metadata.textKey"
+                type="text"
+                placeholder="Enter metadata text key"
+                class="mb-2"
+              ></b-form-input>
+              <b-form-input
+                v-model="form.metadata.textValue"
+                type="text"
+                placeholder="Enter metadata text value"
+              ></b-form-input>
+            </b-col>
+            <b-col>
+              <b-form-input
+                v-model="form.metadata.numberKey"
+                type="text"
+                placeholder="Enter metadata number key"
+                class="mb-2"
+              ></b-form-input>
+              <b-form-input
+                v-model="form.metadata.numberValue"
+                type="number"
+                placeholder="Enter metadata number value"
+              ></b-form-input>
+            </b-col>
+            <b-col>
+              <b-form-input
+                v-model="form.metadata.dateKey"
+                type="text"
+                placeholder="Enter metadata date text key"
+                class="mb-2"
+              ></b-form-input>
+              <b-form-input
+                v-model="form.metadata.dateValue"
+                type="date"
+                placeholder="Enter metadata date value"
+              ></b-form-input>
+            </b-col>
+          </b-row>
         </b-form-group>
 
         <b-button class="mr-3" type="submit" variant="primary">Submit</b-button>
@@ -81,7 +117,7 @@
       <b-button href="/" class="mt-3" v-on:click="move" variant="success">See All Your Favorite Things</b-button>
 
       <b-card class="mt-3 mb-3" header="Form Data Result Going To Backend">
-        <pre class="m-0">{{ form }}</pre>
+        <pre class="m-0">{{ formatted }}</pre>
       </b-card>
 
     </div>
@@ -97,7 +133,14 @@
           description: '',
           ranking: null,
           category: '',
-          metadata: ''
+          metadata: {
+            textKey: '',
+            textValue: '',
+            numberKey: '',
+            numberValue: null,
+            dateKey: '',
+            dateValue: null,
+          }
         },
         categories: [],
         show: true
@@ -109,6 +152,15 @@
           if (this.form.description.length < 10)
             return false
         return true
+      },
+      formatted() {
+        return {
+          title: this.form.title,
+          description: this.form.description,
+          ranking: this.form.ranking,
+          category: this.form.category,
+          metadata: this.convert(this.form.metadata)
+        }
       }
     },
     created() {
@@ -124,6 +176,20 @@
     methods: {
       move() {
         this.$router.push('/form')
+      },
+      convert(metadata) {
+        let finalMeta = {}
+
+        if (metadata.textKey && metadata.textValue)
+          finalMeta[metadata.textKey] = metadata.textValue
+
+        if (metadata.numberKey && metadata.numberValue)
+          finalMeta[metadata.numberKey] = metadata.numberValue
+
+        if (metadata.dateKey && metadata.dateValue)
+          finalMeta[metadata.dateKey] = metadata.dateValue
+
+        return finalMeta
       },
       fetchData() {
         // replace `getPost` with your data fetching util / API wrapper
@@ -152,6 +218,10 @@
       },
       onSubmit(evt) {
         evt.preventDefault()
+        this.form.metadata = this.convert(this.form.metadata)
+
+        console.log(JSON.stringify(this.form))
+
         fetch('https://13.235.4.179/api/v1/favorites/', {
           method: 'POST', // *GET, POST, PUT, DELETE, etc.
           mode: 'cors', // no-cors, cors, *same-origin
@@ -182,7 +252,12 @@
         this.form.description = ''
         this.form.number = null
         this.form.categories = ''
-        this.form.metadata = ''
+        this.form.metadata.textKey = ''
+        this.form.metadata.textValue = ''
+        this.form.metadata.numberKey = ''
+        this.form.metadata.numberValue = ''
+        this.form.metadata.dateKey = ''
+        this.form.metadata.dateValue = ''
         // Trick to reset/clear native browser form validation state
         this.show = false
         this.$nextTick(() => {
