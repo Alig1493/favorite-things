@@ -1,6 +1,6 @@
 ### Time spent on coding and scope for improvements
-This project was done over the span of two weekends, most of which were spent for study purposes of 
-mostly the vue.js library.
+This project was done over the span of two and a half to three weeks, 
+most of which were spent for study purposes of the vue.js framework.
 
 (P.S: the metadata portion shows us the key value pairs we can store in our database.
 In order to save the metadata values we have to enter both the key and value
