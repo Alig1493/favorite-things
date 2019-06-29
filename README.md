@@ -4,6 +4,11 @@ code to serve a single page application for the
 [favorite things backend](https://github.com/Alig1493/favorites-backend) 
 django code.
 
+### Disclaimer
+Please first accept the certificate provided by the backend portion of the code
+by first going to the backend site deployed [here](https://13.235.4.179/). This is 
+important for the front end code to conncet and work with the backend.
+
 ### Deployment
 Using netlify
 Link: https://vibrant-lewin-b97ee2.netlify.com/
