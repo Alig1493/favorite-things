@@ -13,7 +13,7 @@ better if I had more time are:
     * Dockerized the application for better management
     * Handling the success and failure requests and redirects
     (at the moment both success and failure responses redirect
-    to the default landing page.)
+    to the default landing page.). Handle and improve the login flow better.
     * Use a base URL namespace to avoid changing request
     URLs in every single component file
     * Code for testing
@@ -24,6 +24,7 @@ better if I had more time are:
     send to the backend.
     * Implement PATCH/PUT and GET(Retrieve) request handling using forms (only implemented 
     GET(list) and POST)
+	* Handle the input of the enum data type.
 
 2. For back end:
     * More tests

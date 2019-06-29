@@ -18,7 +18,8 @@ Login credentials:
 
 P.S: This application isn't well built in the sense that it will 
 redirect to the list page even if the response status after submitting the
-form is anything other than 201/200
+form is anything other than 201/200. In case the jwt expires please go to the
+[login page](https://vibrant-lewin-b97ee2.netlify.com/) manually to get a new token.
 
 ## Project setup
 ```
