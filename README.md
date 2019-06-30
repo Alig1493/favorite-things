@@ -4,14 +4,9 @@ code to serve a single page application for the
 [favorite things backend](https://github.com/Alig1493/favorites-backend) 
 django code.
 
-### Disclaimer
-Please first accept the certificate provided by the backend portion of the code
-by first going to the backend site deployed [here](https://13.235.4.179/). This is 
-important for the front end code to conncet and work with the backend.
-
 ### Deployment
-Using netlify
-Link: https://vibrant-lewin-b97ee2.netlify.com/
+Using dokku
+Link: http://13.235.4.179:3000/
 Login credentials:
 * username: admin
 * password: admin12345
@@ -19,7 +14,7 @@ Login credentials:
 P.S: This application isn't well built in the sense that it will 
 redirect to the list page even if the response status after submitting the
 form is anything other than 201/200. In case the jwt expires please go to the
-[login page](https://vibrant-lewin-b97ee2.netlify.com/) manually to get a new token.
+[login page](http://13.235.4.179:3000/login) manually to get a new token.
 
 ## Project setup
 ```
