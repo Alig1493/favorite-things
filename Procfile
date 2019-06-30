@@ -1,1 +1,1 @@
-web: npm run serve -- --port -5000
+web: serve -s dist
