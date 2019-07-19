@@ -5,7 +5,7 @@ code to serve a single page application for the
 django code.
 
 ### Deployment
-Deployed to an AWS server using dokku
+Deployed to an AWS server instance (nano) using dokku PaaS
 Link: http://13.235.4.179:3000/
 
 Login credentials:
@@ -16,6 +16,13 @@ P.S: This application isn't well built in the sense that it will
 redirect to the list page even if the response status after submitting the
 form is anything other than 201/200. In case the jwt expires please go to the
 [login page](http://13.235.4.179:3000/login) manually to get a new token.
+
+Pointers:
+- Double click on the category input field to see pre-defined categories
+- The category input field will also accept new categories as text and will be created upon submission.
+  That can be seen on the next redirect.
+- If a bad request is sent to the backend then you will be redirected to the list page,
+  however you won't be seeing the newly created objects 
 
 ## Project setup
 ```
