@@ -28,11 +28,7 @@ Pointers:
 ```
 npm install
 ```
-Used [this history and push states](https://www.netlify.com/docs/redirects/)
-guide for router settings when my single page vue app on netlify.
-
 Used [bootstrap-vue for templating](https://bootstrap-vue.js.org/docs/)
-
 
 ### Compiles and hot-reloads for development
 ```
