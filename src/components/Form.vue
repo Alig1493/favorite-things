@@ -54,7 +54,7 @@
             list="input-5"
             v-model="form.category"
             required
-            placeholder="Type a category of double-click to choose one from below"
+            placeholder="Type a category to insert a new one or double-click to choose available ones from below"
           ></b-form-input>
 
           <datalist id="input-5">
@@ -174,9 +174,6 @@
     },
     name: "Form",
     methods: {
-      move() {
-        this.$router.push('/form')
-      },
       convert(metadata) {
         let finalMeta = {}
 
@@ -193,7 +190,7 @@
       },
       fetchData() {
         // replace `getPost` with your data fetching util / API wrapper
-        fetch('http://13.235.4.179/api/v1/favorites/categories/', {
+        fetch(process.env.VUE_APP_ROOT_API + 'api/v1/favorites/categories/', {
           method: 'GET', // *GET, POST, PUT, DELETE, etc.
           mode: 'cors', // no-cors, cors, *same-origin
           credentials: 'same-origin',
@@ -219,10 +216,7 @@
       onSubmit(evt) {
         evt.preventDefault()
         this.form.metadata = this.convert(this.form.metadata)
-
-        console.log(JSON.stringify(this.form))
-
-        fetch('http://13.235.4.179/api/v1/favorites/', {
+        fetch(process.env.VUE_APP_ROOT_API + 'api/v1/favorites/', {
           method: 'POST', // *GET, POST, PUT, DELETE, etc.
           mode: 'cors', // no-cors, cors, *same-origin
           credentials: 'same-origin',

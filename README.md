@@ -5,8 +5,9 @@ code to serve a single page application for the
 django code.
 
 ### Deployment
-Using dokku
+Deployed to an AWS server using dokku
 Link: http://13.235.4.179:3000/
+
 Login credentials:
 * username: admin
 * password: admin12345
