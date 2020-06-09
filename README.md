@@ -5,8 +5,8 @@ code to serve a single page application for the
 django code.
 
 ### Deployment
-Deployed to an AWS server instance (nano) using dokku PaaS
-Link: http://13.235.4.179:3000/
+Deployed to heroku free tier
+Link: https://favorite-things.herokuapp.com/
 
 Login credentials:
 * username: admin
@@ -15,7 +15,7 @@ Login credentials:
 P.S: This application isn't well built in the sense that it will 
 redirect to the list page even if the response status after submitting the
 form is anything other than 201/200. In case the jwt expires please go to the
-[login page](http://13.235.4.179:3000/login) manually to get a new token.
+[login page](https://favorite-things.herokuapp.com/login) manually to get a new token.
 
 Pointers:
 - Double click on the category input field to see pre-defined categories
